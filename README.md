@@ -1,6 +1,5 @@
 # HTML Learning Repository
 
----
 
 ### 1. **HTML Basics**  
 - **HTML (HyperText Markup Language):** Used to structure web content.  
@@ -248,5 +247,114 @@
 | `<mark>`     | Highlight text             | Highlighted text              |
 | `<sub>`      | Subscript text             | H₂O                           |
 | `<sup>`      | Superscript text           | x²                            |
+
+---
+
+
+## The `target="_blank"` attribute in the `<a>` tag is used to open a link in a new browser tab or window. Let me expand on this and provide more options for the `target` attribute and other commonly used anchor (`<a>`) tag attributes.
+
+---
+
+### **`target` Attribute Options**
+The `target` attribute specifies where to display the linked document.
+
+1. **`_self`** (Default Behavior):
+   - Opens the link in the same tab or window.
+   - Example:
+     ```html
+     <a href="https://example.com" target="_self">Open in Same Tab</a>
+     ```
+
+2. **`_blank`**:
+   - Opens the link in a new tab or window.
+   - Example:
+     ```html
+     <a href="https://example.com" target="_blank">Open in New Tab</a>
+     ```
+
+3. **`_parent`**:
+   - Opens the link in the parent frame (useful when working with iframes).
+   - Example:
+     ```html
+     <a href="https://example.com" target="_parent">Open in Parent Frame</a>
+     ```
+
+4. **`_top`**:
+   - Opens the link in the full body of the window, breaking out of frames entirely.
+   - Example:
+     ```html
+     <a href="https://example.com" target="_top">Open in Full Window</a>
+     ```
+
+5. **Frame Name** (Custom):
+   - Opens the link in a specific frame if named.
+   - Example:
+     ```html
+     <iframe name="myFrame"></iframe>
+     <a href="https://example.com" target="myFrame">Open in iframe</a>
+     ```
+
+---
+
+### **Other Anchor Tag Attributes**
+
+1. **`rel`** (Relationship):
+   - Specifies the relationship between the current document and the linked document.
+   - Common values:
+     - `nofollow`: Tells search engines not to follow the link.
+     - `noopener`: Prevents the new page from accessing `window.opener`.
+     - `noreferrer`: Prevents the browser from sending the HTTP referrer header.
+   - Example:
+     ```html
+     <a href="https://example.com" target="_blank" rel="noopener noreferrer">Secure Link</a>
+     ```
+
+2. **`href`** (Hyperlink Reference):
+   - Specifies the URL of the page the link goes to.
+   - Example:
+     ```html
+     <a href="https://example.com">Go to Example</a>
+     ```
+
+3. **`download`**:
+   - Allows users to download the linked file instead of navigating to it.
+   - Example:
+     ```html
+     <a href="file.pdf" download="MyFile.pdf">Download File</a>
+     ```
+
+4. **`type`**:
+   - Specifies the MIME type of the linked document.
+   - Example:
+     ```html
+     <a href="document.pdf" type="application/pdf">Open PDF</a>
+     ```
+
+5. **`title`**:
+   - Adds a tooltip to the link that appears on hover.
+   - Example:
+     ```html
+     <a href="https://example.com" title="Go to Example Website">Hover Over Me</a>
+     ```
+
+6. **`target="_blank"` with Security (Best Practice)**:
+   - Add `rel="noopener noreferrer"` to improve security.
+   - Example:
+     ```html
+     <a href="https://example.com" target="_blank" rel="noopener noreferrer">Safe New Tab</a>
+     ```
+
+---
+
+### Full Example with Multiple Attributes:
+```html
+<a href="https://example.com"
+   target="_blank"
+   rel="noopener noreferrer"
+   download="example.pdf"
+   title="Click to open Example in a new tab">
+   Visit Example and Download
+</a>
+```
 
 ---
